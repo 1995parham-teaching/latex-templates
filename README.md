@@ -71,5 +71,10 @@ TEXINPUTS_ROOT := ..:../latex:
   array's `\UseMathForPositioningText`, and every table in every document dies.
 - Write fractional marks with the Arabic decimal separator (`۱٫۵`). An ASCII
   dot is a neutral character, so `۱.۵` comes out of an RTL run reading `۵.۱`.
+- Colour a cover page with `\textcolor{tbaccent}{...}`, not with a
+  `{\color{tbaccent}...}` group: inside the RTL boxes a cover is built from,
+  the group form silently produces black.
+- `\lr{}` switches to the *Latin* font, so Persian digits inside it disappear.
+  It is not a way to fix the direction of a number.
 - TeX Live 2023 is the floor: the Persian aliases come from `[localize]`, which
   was `[localise]` up to TeX Live 2022.
